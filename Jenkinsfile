@@ -6,7 +6,7 @@ pipeline {
          steps {
             browserstack(credentialsId: '7321986c-6a87-44de-bd54-573815224cdb') {
                echo "hello"
-               sh 'mvn test Chrome'
+               sh 'javac -cp /Users/tarunamembal/selenium-grid/selenium-server-4.9.0.jar:. Chrome.java'
                browserStackReportPublisher 'automate'
             }
          }
