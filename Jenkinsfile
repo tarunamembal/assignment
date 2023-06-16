@@ -6,7 +6,8 @@ pipeline {
          steps {
             browserstack(credentialsId: '7321986c-6a87-44de-bd54-573815224cdb') {
                echo "hello"
-               sh 'javac -cp /src/runonbstack/Chrome.java'
+               sh 'mvn compile'
+               sh 'mvn test -P /src/runonbstack/Chrome.java'
                browserStackReportPublisher 'automate'
             }
          }
